@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="DarwinFeed.UcCallingPoint"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:DarwinFeed="clr-namespace:DarwinFeed"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="200">
+    <UserControl.DataContext>
+        <DarwinFeed:CallingPointViewModel/>
+    </UserControl.DataContext>
+    <DockPanel Name="dpOutter">
+        <TextBox Name="tbCallingPoint" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" DockPanel.Dock="Left" Foreground="{StaticResource brushText}" Background="{x:Null}" Text="{Binding PointName,Mode=OneWay}" FontSize="20" />
+        <TextBox Name="tbTime" HorizontalAlignment="Right" VerticalAlignment="Stretch" DockPanel.Dock="Right" Foreground="{StaticResource brushText}" Background="{x:Null}" Text="{Binding CallingTimeText,Mode=OneWay}" FontSize="20"  />
+    </DockPanel>
+</UserControl>
