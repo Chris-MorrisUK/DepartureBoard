@@ -24,6 +24,12 @@ namespace DarwinFeed
         {
             InitializeComponent();
             this.Loaded += MainWindow_Loaded;
+            this.Closing += MainWindow_Closing;
+        }
+
+        void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Logging.LogMessage("Main window closed", 3);
         }
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -34,7 +40,10 @@ namespace DarwinFeed
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
+            {
                 this.Close();
+                Logging.LogMessage("Escape Pressed, closing",2);
+            }
         }
 
     }

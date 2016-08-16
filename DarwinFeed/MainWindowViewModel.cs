@@ -37,10 +37,10 @@ namespace DarwinFeed
 #if DEBUG
             if (DesignerProperties.GetIsInDesignMode(new System.Windows.DependencyObject())) return;
 #endif
-            DarwinDataStore.TheDataStore.UpdateDepartureBoard();
+            if (!DarwinDataStore.TheDataStore.UpdateDepartureBoard())
+                Message = Properties.Settings.Default.UpdateFailedMessage;
             List<DestinationRowViewModel> railservices = DarwinDataStore.TheDataStore.TheDepartureBoard.GetRailServicesVM();
-            guiThreadDispatcher.BeginInvoke(new Action(() => guiThreadUpdate(railservices)));
-            
+            guiThreadDispatcher.BeginInvoke(new Action(() => guiThreadUpdate(railservices)));            
         }
 
         private void guiThreadUpdate(List<DestinationRowViewModel> toAdd)

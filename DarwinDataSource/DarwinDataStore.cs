@@ -16,10 +16,10 @@ namespace DarwinFeed
         
         public DarwinDepartureBoard TheDepartureBoard { get; private set; }
 
-        public bool UpdateDepartureBoard()
+        public void UpdateDepartureBoard()
         {
             TheDepartureBoard = DarwinClient.GetGetEntireBoard(Properties.Settings.Default.StationCode, Properties.Settings.Default.Offset, Properties.Settings.Default.Window);
-            return TheDepartureBoard != null;
+            
         }
 
         #region singleton stuff

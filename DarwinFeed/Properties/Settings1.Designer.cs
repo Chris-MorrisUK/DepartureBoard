@@ -124,5 +124,17 @@ namespace DarwinFeed.Properties {
                 return ((string)(this["CancelledString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Could not update board - check internet connection")]
+        public string UpdateFailedMessage {
+            get {
+                return ((string)(this["UpdateFailedMessage"]));
+            }
+            set {
+                this["UpdateFailedMessage"] = value;
+            }
+        }
     }
 }

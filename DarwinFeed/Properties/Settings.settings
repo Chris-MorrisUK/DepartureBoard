@@ -29,5 +29,8 @@
     <Setting Name="CancelledString" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Cancelled</Value>
     </Setting>
+    <Setting Name="UpdateFailedMessage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Could not update board - check internet connection</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
